@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from "react";
+import Navbar from "./components/Navbar";
+import News from "./components/News";
+import { Routes, Route, Router } from "react-router-dom";
+import World from "./components/World";
+import Sports from "./components/Sports";
+import Business from "./components/Business";
+import Politics from "./components/Politics";
+import Entertainment from "./components/Entertainment";
+import Home from "./components/Home";
+import Cricket from "./components/Cricket";
+import SportsAll from "./components/SportsAll";
+import Football from "./components/Football";
+
+
+export default class App extends Component {
+  render() {
+    return (
+      <>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />}/>
+            <Route path="world" element={<World />} />
+            <Route path="sports" element={<Sports />}>
+              <Route index element={<SportsAll/>}/>
+              <Route path="all" element={<SportsAll/>}/>
+              <Route path="cricket" element={<Cricket/>}/>
+              <Route path="football" element={<Football/>}/>
+            </Route>
+            <Route path="business" element={<Business />} />
+            <Route path="politics" element={<Politics />} />
+            <Route path="entertainment" element={<Entertainment />} />
+          
+        </Routes>
+      </>
+    );
+  }
 }
-
-export default App;
