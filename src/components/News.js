@@ -224,7 +224,7 @@ export class News extends Component {
             <div className="row text-center my-3">
                 {
                     this.state.articles.map((x)=>(<div className="col-12 col-sm-6 col-lg-4 d-flex justify-content-around my-2" key={x.url}>
-                        <NewsItem title={x.title} description={x.description} imageURL={x.urlToImage} newsURL={x.url}/>
+                        <NewsItem title={x.title?x.title:""} description={x.description?x.description:""} imageURL={x.urlToImage?x.urlToImage:"https://www.infidigit.com/wp-content/uploads/2022/01/News-1.png"} newsURL={x.url}/>
                         </div>))
                 }  
                 
