@@ -2,8 +2,7 @@ import "./App.css";
 
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
-import News from "./components/News";
-import { Routes, Route, Router } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import World from "./components/World";
 import Sports from "./components/Sports";
 import Business from "./components/Business";

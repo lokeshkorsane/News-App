@@ -223,7 +223,7 @@ export class News extends Component {
         <>
             <div className="row text-center my-3">
                 {
-                    this.state.articles.map((x)=>(<div className="col-12 col-sm-6 col-lg-4 d-flex justify-content-around my-2">
+                    this.state.articles.map((x)=>(<div className="col-12 col-sm-6 col-lg-4 d-flex justify-content-around my-2" key={x.url}>
                         <NewsItem title={x.title} description={x.description} imageURL={x.urlToImage} newsURL={x.url}/>
                         </div>))
                 }  

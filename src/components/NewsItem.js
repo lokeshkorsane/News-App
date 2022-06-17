@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
 export class NewsItem extends Component {
@@ -12,7 +11,7 @@ export class NewsItem extends Component {
         <img src={imageURL} className="card-img-top" alt="..."/>
         <div className="card-body flex-column-reverse d-flex">
         <div className="d-grid gap-2">
-          <a href={newsURL}  target="_blank"className="btn btn-primary bolck">Explore</a>
+          <a href={newsURL}  target="_blank" rel="noreferrer" className="btn btn-primary bolck">Explore</a>
           </div>
           <p className="card-text">{description}</p>
           <h5 className="card-title">{title}</h5>
