@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 
 export class News extends Component {
-  /*article=[
+  /*articles=[
     {
       "source": { "id": null, "name": "The Indian Express" },
       "author": "Express Web Desk",
@@ -211,12 +211,50 @@ export class News extends Component {
         }
     }
   static propTypes = {}
-  async componentDidMount() { 
+    async componentDidMount() { 
+    //const proxyUrl = "https://cors-anywhere.herokuapp.com/"
     let url=this.props.url;
-    let data=await fetch(url);
+    
+    let data= await fetch(url);
     let parsedData=await data.json();
     this.setState({articles: parsedData.articles})
   }
+  /*async componentDidMount() { 
+    const proxyUrl = "https://cors-anywhere.herokuapp.com/"
+    const qInTitle = "world";
+const from = "";
+const apiKey = "0894111e580846cf80c553cc90b39958";
+const url = `${proxyUrl}${this.props.url}`
+const request = new Request(url);
+
+
+fetch(request)
+  .then(response => response.json())
+  .then((news) => {
+    //this.setState({articles : news.articles})
+    console.log(news);
+  })
+  .catch(error => {
+    console.log(error);
+  })
+  }
+   */
+  /*
+  const proxyUrl = "https://cors-anywhere.herokuapp.com/"
+const qInTitle = "";
+const from = "";
+const apiKey = "";
+const url = `${proxyUrl}https://newsapi.org/v2/everything?qInTitle=${qInTitle}&from=${from}language=en&apiKey=${apiKey}`;
+const request = new Request(url);
+
+fetch(request)
+  .then(response => response.json())
+  .then((news) => {
+    console.log(news);
+  })
+  .catch(error => {
+    console.log(error);
+  });*/
 
   render() {
     return (
